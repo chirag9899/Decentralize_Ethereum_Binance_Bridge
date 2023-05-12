@@ -28,8 +28,8 @@ contract BridgeBase {
         token = IToken(_token);
     }
 
-    function burn(address to, uint amount) external {
-        token.burn(msg.sender, amount);
+    function burn(address from, address to, uint amount) external {
+        token.burn(from, amount);
         emit Transfer(
             msg.sender,
             to,
